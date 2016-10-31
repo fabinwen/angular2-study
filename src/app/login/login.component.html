@@ -1,0 +1,16 @@
+<div class="container">
+
+  <form class="form-signin">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label for="inputEmail" class="sr-only">用户名</label>
+    <input type="text" #userNo id="inputEmail" class="form-control" placeholder="Email address" required autofocus value="22">
+    <label for="inputPassword" class="sr-only">密码</label>
+    <input type="password" #userPwd id="inputPassword" class="form-control" placeholder="Password" required value="222">
+
+    <button class="btn btn-lg btn-primary btn-block" type="button" (click)="login(userNo.value, userPwd.value)">Sign in</button>
+    <p>{{errorMsg}}</p>
+  </form>
+  <button (click)="logout()" class="btn btn-lg btn-block" *ngIf="userService.isLoggedIn">Logout</button>
+</div> <!-- /container -->
+
+

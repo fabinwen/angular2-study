@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,ViewContainerRef  } from '@angular/core';
+import {UserService} from './shared';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  private viewContainerRef: ViewContainerRef;
+  constructor(viewContainerRef:ViewContainerRef, private userService:UserService){
+    this.viewContainerRef = viewContainerRef;
+  }
+  title = '阅读';
 }

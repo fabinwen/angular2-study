@@ -1,0 +1,6 @@
+{
+ "/WebService":{
+    "target":"http://localhost:8080/exam",
+    "secure":false
+  }
+}
