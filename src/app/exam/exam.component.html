@@ -1,0 +1,36 @@
+<h2>{{bookName}}</h2>
+<div class="jumbotron">
+  <form  #examForm = "ngForm" [formGroup]="examFormGrp" (ngSubmit)= "onSubmit(examForm)" >
+    <div *ngFor="let question of questions; let i=index;">
+      {{i+1}}. <span [innerHTML]="question.prompt"></span>
+
+      <div *ngFor="let option of question.options" class="radio">
+        <label>
+          <input type="radio" [formControlName]="question.questionId" [value]="option.key">
+          {{option.key}}. <span [innerHTML]="option.content"></span>
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">测试</button>
+  </form>
+</div>
+<alert *ngFor="let alert of alerts;let i = index" [type]="alert.type" dismissible="true" (close)="closeAlert(i)">
+  {{ alert?.msg }}
+</alert>
+
+<div class="modal fade" bsModal #waitModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="staticModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Static modal</h4>
+      </div>
+      <div class="modal-body">
+        努力提交中。。。.
+      </div>
+    </div>
+  </div>
+</div>

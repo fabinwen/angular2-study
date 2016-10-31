@@ -1,0 +1,26 @@
+img{
+  max-height: 180px;
+  max-width: 180px;
+}
+.bd-callout {
+padding: 1.25rem;
+margin-top: 1.25rem;
+margin-bottom: 1.25rem;
+border: 1px solid #eee;
+border-left-width: .25rem;
+border-radius: .25rem;
+}
+.bd-callout-info {
+  border-left-color: #5bc0de;
+}
+.avatar{
+  width: 4.4rem;
+  height: 4.4rem;
+}
+.post-meta {
+  margin-bottom: 0.5rem;
+  color: #999;
+}
+.blockquote{
+  font-size : 1rem;
+}

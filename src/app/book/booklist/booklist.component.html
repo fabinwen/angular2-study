@@ -1,0 +1,19 @@
+<accordion [closeOthers]="oneAtATime">
+  <accordion-group *ngFor="let booklist of booklists" heading="{{booklist.name}}"
+                   isOpen="true">
+    <div class="row">
+      <div *ngFor="let book of booklist.books" class="col-xs-4 col-lg-2" (click)="gotoDetail(book)">
+        <img class="media-object" data-src="{{book.cover}}">
+
+        <div>
+          <h5>{{book.name}}</h5>
+
+          <p ><span *ngIf="book.read" class="label label-success">{{book.read | readFlag}}</span>
+            <span *ngIf="!book.read" class="label label-danger">{{book.read | readFlag}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </accordion-group>
+
+</accordion>
